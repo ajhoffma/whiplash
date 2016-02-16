@@ -45,7 +45,6 @@ class BaseClient(object):
         self.client = client
 
     def process(self, response):
-        print response.status_code, response.content
         response.raise_for_status()
         return response.json() if response.text else None
 
@@ -115,12 +114,12 @@ class OrderClient(BaseClient):
             raise WhiplashException('Must specify order id or originator id')
 
         if order_id:
-            return Order(self._get('/%s' % order_id))
+            return Order(self.client, self._get('/%s' % order_id))
         else:
-            return Order(self._get('/originator/%s' % originator_id))
+            return Order(self.client, self._get('/originator/%s' % originator_id))
 
     def create(self, **kwargs):
-        return Order(self._post('', kwargs))
+        return Order(self.client, self._post('', kwargs))
 
     def update(self, order_id, **kwargs):
         return self._put('/%s' % order_id, kwargs)
