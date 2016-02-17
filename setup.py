@@ -44,7 +44,7 @@ setup(
     long_description=readme + '\n\n' + history,
     author="Fulfil.IO Inc.",
     author_email='hello@fulfil.io',
-    url='https://github.com/fulfilio/whiplash',
+    url='https://github.com/ajhoffma/whiplash',
     packages=[
         'whiplash',
     ],
