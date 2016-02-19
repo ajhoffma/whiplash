@@ -39,7 +39,7 @@ test_requirements = [
 
 setup(
     name='whiplash',
-    version='0.1.0',
+    version='0.1.1',
     description="Python API Client for the whiplash API",
     long_description=readme + '\n\n' + history,
     author="Fulfil.IO Inc.",
